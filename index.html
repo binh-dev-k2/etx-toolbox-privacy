@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ETX Toolbox</title>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 820px;
+      margin: 48px auto;
+      padding: 0 24px 64px;
+      color: #222;
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin-top: 36px;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li {
+      font-size: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.95em;
+    }
+
+    .muted {
+      color: #666;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #888;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Privacy Policy — ETX Toolbox</h1>
+  <p class="muted"><strong>Last updated:</strong> April 30, 2026</p>
+
+  <p>
+    ETX Toolbox is a modular browser extension that provides capture, productivity, page utility, privacy inspection,
+    and AI-assisted tools. This Privacy Policy explains what information the extension stores, when data may leave your
+    device, and how browser permissions are used.
+  </p>
+
+  <h2>1. Core Privacy Approach</h2>
+  <ul>
+    <li>ETX Toolbox is designed to store most settings and working data locally in the browser.</li>
+    <li>We do not run our own analytics, advertising, or user-tracking service inside the extension.</li>
+    <li>We do not sell personal data.</li>
+    <li>Some features can interact with third-party services only when that feature requires it or when the user explicitly configures and uses it.</li>
+  </ul>
+
+  <h2>2. Data Stored Locally on Your Device</h2>
+  <p>The extension may store the following information locally using <code>chrome.storage.local</code>, <code>localStorage</code>, or <code>IndexedDB</code>:</p>
+  <ul>
+    <li><strong>Extension preferences</strong> — enabled plugins, favorites, ordering, UI state, language, and side panel target state.</li>
+    <li><strong>AI provider configuration</strong> — provider profiles, model selections, base URLs, API keys, and optional custom headers entered by the user.</li>
+    <li><strong>Plugin-specific working data</strong> — note content, JSON formatter state, CSS rules, color history, recent actions, bookmark preferences, and image/screenshot editor presets.</li>
+    <li><strong>Pomodoro state and statistics</strong> — timer phase, remaining state, and locally stored usage stats.</li>
+    <li><strong>Session Recorder data</strong> — locally saved session metadata and recorded DOM event timelines in IndexedDB.</li>
+    <li><strong>Visual Diff data</strong> — locally saved page snapshot metadata and image data in IndexedDB.</li>
+    <li><strong>Privacy inspection results</strong> — current-page analysis data generated in memory or from browser APIs while you use Privacy Shield.</li>
+  </ul>
+
+  <h2>3. Data That May Be Sent to Third Parties</h2>
+  <p>Most ETX Toolbox features work locally. However, some features may send data to third parties in the following cases:</p>
+  <ul>
+    <li><strong>AI features</strong> — if you configure and use AI tools such as summarization, translation, or writing, the text you submit and related prompt content may be sent to the third-party AI provider you choose, such as OpenAI, OpenRouter, Anthropic, Google Gemini, or another compatible provider configured by you.</li>
+    <li><strong>Provider configuration and model lookup</strong> — when you test or use an AI provider, the extension may make requests to that provider's API endpoints using the API key and settings you entered.</li>
+    <li><strong>Remote page assets</strong> — some workflows may fetch page resources or images in order to save, convert, compare, or process them at your request.</li>
+    <li><strong>Public favicon lookup</strong> — some UI surfaces may request public favicon assets for domains shown in the extension interface.</li>
+  </ul>
+  <p>
+    These third-party services are governed by their own privacy policies and terms. You are responsible for reviewing
+    the provider you choose to use.
+  </p>
+
+  <h2>4. Data We Do Not Collect for Ourselves</h2>
+  <ul>
+    <li>We do not operate our own remote user analytics platform for ETX Toolbox.</li>
+    <li>We do not collect browsing history as a separate analytics dataset.</li>
+    <li>We do not transmit your local extension data to our own servers.</li>
+    <li>We do not share your data with advertisers.</li>
+  </ul>
+
+  <h2>5. How Permissions Are Used</h2>
+  <ul>
+    <li><strong>downloads</strong> — save screenshots, images, converted files, exported content, and other user-requested outputs to disk.</li>
+    <li><strong>activeTab</strong> — access the current active page when a user invokes page-specific tools.</li>
+    <li><strong>sidePanel</strong> — open ETX Toolbox tools in the browser side panel.</li>
+    <li><strong>storage</strong> — persist local settings, plugin state, AI configuration, and saved tool data.</li>
+    <li><strong>tabs</strong> — identify the active tab, read tab metadata needed for page tools, and communicate with page content scripts.</li>
+    <li><strong>windows</strong> — open and control extension UI flows that depend on the current browser window context.</li>
+    <li><strong>alarms</strong> — keep timer-based features such as Pomodoro working reliably under Manifest V3 service worker suspension.</li>
+    <li><strong>scripting</strong> — inject content scripts on supported pages when needed for tools like Color Picker, Text Extractor, Privacy Shield, and similar page utilities.</li>
+    <li><strong>bookmarks</strong> — create or manage bookmarks when the user uses bookmark-related features.</li>
+    <li><strong>cookies</strong> — inspect or remove cookies for the current site when the user uses cookie/privacy tools.</li>
+    <li><strong>clipboardWrite</strong> — copy colors, text, screenshots, QR codes, and other generated output to the clipboard when requested by the user.</li>
+    <li><strong>contextMenus</strong> — provide right-click actions such as translating selected text or downloading images.</li>
+    <li><strong>notifications</strong> — show Pomodoro and workflow notifications initiated by extension features.</li>
+    <li><strong>&lt;all_urls&gt;</strong> — allow page-level tools to run on websites the user chooses to use them on.</li>
+  </ul>
+
+  <h2>6. Data Retention and Control</h2>
+  <ul>
+    <li>Locally stored extension data remains on your device until you remove it, overwrite it, clear browser storage, or uninstall the extension.</li>
+    <li>You can remove many saved items directly through the extension UI, such as notes, snapshots, recorder sessions, or plugin data.</li>
+    <li>Uninstalling the extension typically removes extension-managed local storage, subject to browser behavior.</li>
+  </ul>
+
+  <h2>7. Security</h2>
+  <p>
+    We aim to minimize data collection and keep sensitive configuration local to the browser whenever possible.
+    However, no software environment can guarantee absolute security. If you configure third-party AI providers, the
+    security of requests sent to those services depends in part on those providers and your chosen configuration.
+  </p>
+
+  <h2>8. Changes to This Policy</h2>
+  <p>
+    We may update this Privacy Policy from time to time to reflect product, permission, or compliance changes. The
+    updated version will be published with a revised "Last updated" date.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>If you have questions about this Privacy Policy, contact: <strong>binhcoder02@gmail.com</strong></p>
+
+  <footer>ETX Toolbox &mdash; Privacy Policy</footer>
+</body>
+
+</html>
