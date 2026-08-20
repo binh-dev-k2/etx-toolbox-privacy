@@ -1,183 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — ETX Toolbox</title>
   <style>
-    :root {
-      color-scheme: light dark;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      max-width: 860px;
-      margin: 48px auto;
-      padding: 0 24px 64px;
-      color: #1e293b;
-      line-height: 1.7;
-      background: #ffffff;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: #0f172a;
-        color: #f8fafc;
-      }
-
-      .muted {
-        color: #94a3b8 !important;
-      }
-
-      code {
-        background: #1e293b !important;
-        color: #38bdf8 !important;
-      }
-
-      footer {
-        color: #64748b !important;
-      }
-    }
-
-    h1 {
-      font-size: 32px;
-      line-height: 1.2;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-top: 36px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 8px;
-    }
-
-    p,
-    li {
-      font-size: 15px;
-    }
-
-    ul {
-      padding-left: 24px;
-    }
-
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.9em;
-      background: #f1f5f9;
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #0284c7;
-    }
-
-    .muted {
-      color: #64748b;
-    }
-
-    footer {
-      margin-top: 56px;
-      color: #94a3b8;
-      font-size: 13px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 16px;
-    }
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; max-width: 860px; margin: 48px auto; padding: 0 24px 64px; color: #1e293b; line-height: 1.7; background: #ffffff; }
+    @media (prefers-color-scheme: dark) { body { background: #0f172a; color: #f8fafc; } .muted, footer { color: #94a3b8 !important; } code { background: #1e293b !important; color: #38bdf8 !important; } }
+    h1 { font-size: 32px; line-height: 1.2; margin-bottom: 8px; letter-spacing: -0.5px; }
+    h2 { font-size: 20px; margin-top: 36px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
+    p, li { font-size: 15px; } ul { padding-left: 24px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #0284c7; }
+    .muted { color: #64748b; } footer { margin-top: 56px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e2e8f0; padding-top: 16px; }
   </style>
 </head>
-
 <body>
   <h1>Privacy Policy — ETX Toolbox</h1>
-  <p class="muted"><strong>Last updated:</strong> July 25, 2026</p>
+  <p class="muted"><strong>Last updated:</strong> August 20, 2026</p>
+  <p>ETX Toolbox is a modular browser extension with productivity, media, capture, privacy, developer, translation, and optional AI tools. This policy explains the data the extension handles, why it handles it, where it is stored, and when it is shared with third parties.</p>
 
-  <p>
-    ETX Toolbox is a modular browser extension providing a unified suite of 25 independent productivity, capture,
-    e-commerce ad spy, and AI content utilities. This Privacy Policy outlines what information the extension stores
-    locally, when network requests occur, and how browser permissions are strictly utilized.
-  </p>
-
-  <h2>1. Core Privacy Commitment</h2>
+  <h2>1. Our privacy commitment</h2>
   <ul>
-    <li><strong>Zero Tracking:</strong> ETX Toolbox operates without any remote user analytics, advertising trackers, or
-      telemetry SDKs.</li>
-    <li><strong>Local First:</strong> All preferences, plugin states, downloaded media metadata, and tool configurations
-      are stored locally on your device.</li>
-    <li><strong>No Data Selling:</strong> We do not collect, transmit, or sell personal user data to third parties.</li>
-    <li><strong>Explicit Action Only:</strong> Third-party API communication (such as AI summarization or TikTok media
-      fetching) only occurs when explicitly initiated by the user.</li>
+    <li><strong>No analytics or advertising trackers:</strong> ETX Toolbox does not operate user analytics, advertising trackers, or telemetry SDKs.</li>
+    <li><strong>Local by default:</strong> Settings and tool data are stored in the browser on your device unless a feature requires a third-party service.</li>
+    <li><strong>No sale of user data:</strong> We do not sell user data or use it for personalized, retargeted, or interest-based advertising.</li>
+    <li><strong>Feature-related use only:</strong> We use page content, browsing context, and user-provided content only to provide the tool you enable or invoke.</li>
   </ul>
 
-  <h2>2. Data Stored Locally on Your Device</h2>
-  <p>The extension utilizes <code>chrome.storage.local</code>, <code>localStorage</code>, and <code>IndexedDB</code>
-    strictly for essential functionality:</p>
+  <h2>2. Data handled and stored locally</h2>
+  <p>The extension may store the following data locally in extension storage, page local storage, or IndexedDB, depending on the tool:</p>
   <ul>
-    <li><strong>Extension Preferences &amp; State:</strong> Enabled/disabled plugin states, custom display order, UI
-      language selection (English/Vietnamese), and side panel target preferences.</li>
-    <li><strong>E-Commerce &amp; Ad Spy Cache:</strong> Download queue history for TikTok videos and original MP3 audio
-      tracks saved locally to disk.</li>
-    <li><strong>AI Content Studio Configuration:</strong> API keys (OpenAI, Gemini, OpenRouter), selected model
-      profiles, and user-customized prompt presets.</li>
-    <li><strong>Smart Capture &amp; Session Recorder:</strong> Page screenshot annotations, region crop dimensions, and
-      recorded DOM event timelines (rrweb format) stored in local IndexedDB.</li>
-    <li><strong>Developer &amp; Utility Settings:</strong> Saved notes, custom domain CSS rules, color picker HEX
-      history, reading time statistics, and Pomodoro timer preferences.</li>
+    <li>Preferences such as language, enabled plugins, plugin order, favorites, recent tools, and side-panel state.</li>
+    <li>Tool settings and results, including color history, notes, custom CSS rules, bookmarks, timer state, reading statistics, and image or screenshot editing preferences.</li>
+    <li>User-created session recordings and related local metadata when you use Session Recorder.</li>
+    <li>Download and export choices needed to complete a user-requested download or export.</li>
+    <li>AI provider configuration, including an API key and selected model, if you choose to configure an AI provider.</li>
+  </ul>
+  <p>ETX Toolbox does not operate a developer-controlled server for storing this local data.</p>
+
+  <h2>3. Data shared with third parties</h2>
+  <p>Some tools send only the content needed to deliver a feature you request:</p>
+  <ul>
+    <li><strong>Google Translate and text-to-speech:</strong> Selected or pasted text, the source/target language, and text-to-speech language are sent to Google Translate when you translate or listen to text. The Translate plugin does not require you to provide a Google account or API key.</li>
+    <li><strong>Optional AI features:</strong> Text that you submit to AI Summarizer or AI Writer is sent to the AI provider you configure, such as OpenAI, Google Gemini, Anthropic, or OpenRouter. The request is authenticated with the API key you provide to that provider.</li>
+    <li><strong>TikTok media tools:</strong> When you request media inspection or download, the extension may contact the media source or a resolver needed to locate the requested public media asset.</li>
+  </ul>
+  <p>The extension does not send page content, URLs, cookies, screenshots, recordings, or clipboard content to third parties unless it is necessary for a feature you explicitly invoke. Image conversion and resizing are performed locally in the browser.</p>
+
+  <h2>4. Browser permissions</h2>
+  <ul>
+    <li><code>downloads</code> — Save user-requested media, webpage images, screenshots, and exported text or files to the local device.</li>
+    <li><code>activeTab</code> — Access the current page after a user action for tools such as screenshots, color sampling, page inspection, and media detection.</li>
+    <li><code>sidePanel</code> — Display the ETX Toolbox dashboard in Chrome's Side Panel.</li>
+    <li><code>storage</code> — Save local preferences, enabled plugin state, and tool data.</li>
+    <li><code>tabs</code> and <code>windows</code> — Access the active tab's URL, title, and window context for page tools, screenshots, and extension navigation.</li>
+    <li><code>alarms</code> — Schedule Pomodoro timers and reminders while the background worker is suspended.</li>
+    <li><code>scripting</code> and <code>&lt;all_urls&gt;</code> host access — Run enabled content-based tools on webpages, such as Translate, Color Picker, image tools, page utilities, and media tools.</li>
+    <li><code>bookmarks</code> — List bookmark folders and create a bookmark for the current page when requested.</li>
+    <li><code>cookies</code> — Display and remove cookies for the current site when you use Cookie Cleaner or related privacy tools.</li>
+    <li><code>clipboardWrite</code> — Copy user-requested output such as sampled colors, translations, generated text, screenshots, or extracted content.</li>
+    <li><code>contextMenus</code> — Add supported right-click shortcuts, including translating selected text and media/page actions.</li>
+    <li><code>notifications</code> — Notify you when Pomodoro focus sessions and breaks finish.</li>
+    <li><code>declarativeNetRequest</code> — Apply a narrowly scoped request-header rule to the Translate plugin's own Google Translate text and text-to-speech requests. It does not block, redirect, inspect, or modify normal browsing traffic.</li>
   </ul>
 
-  <h2>3. Data Sent to Third-Party Services</h2>
-  <p>ETX Toolbox performs network requests strictly to deliver requested features:</p>
+  <h2>5. Data retention and your choices</h2>
   <ul>
-    <li><strong>TikTok &amp; E-Commerce Media Downloader:</strong> When saving TikTok video or audio posts without
-      watermarks, the extension fetches public media assets directly from official CDN servers. No user credentials,
-      session cookies, or personal tracking identifiers are transmitted.</li>
-    <li><strong>AI Content Features:</strong> If you use AI Summarizer, Translator, or Copywriter features, text content
-      explicitly selected or submitted by you is sent directly to your configured AI provider (e.g., OpenAI, Google
-      Gemini, Anthropic, or OpenRouter) via secure HTTPS requests using your provided API key.</li>
-    <li><strong>Remote Image Processing:</strong> Features like Image Converter process images locally inside your
-      browser using HTML5 Canvas APIs without uploading files to remote conversion servers.</li>
+    <li>Local extension data remains on your device until you clear it through the relevant tool, clear browser extension data, or uninstall ETX Toolbox.</li>
+    <li>Files downloaded or exported by the extension are stored in the location you choose through Chrome's download behavior and can be deleted like other local files.</li>
+    <li>You can disable individual plugins at any time to stop their functionality.</li>
+    <li>Uninstalling the extension removes its extension storage. It does not delete files you previously downloaded or exported.</li>
   </ul>
 
-  <h2>4. How Browser Permissions Are Used</h2>
-  <ul>
-    <li><code>downloads</code> — Save TikTok videos, audio tracks, webpage images, captured screenshots, and extracted
-      text files directly to your device's Downloads folder.</li>
-    <li><code>activeTab</code> — Capture visible tab viewports for screenshots, sample pixel color values for Color
-      Picker, and inspect page DOM for media detection.</li>
-    <li><code>sidePanel</code> — Render the main ETX Toolbox dashboard in Chrome's native side panel interface.</li>
-    <li><code>storage</code> — Store user preferences, plugin states, color history, and custom tool rules locally.</li>
-    <li><code>tabs</code> — Read current tab titles and URLs for Page Insight reading time calculation and screenshot
-      stitching.</li>
-    <li><code>scripting</code> — Inject lightweight content scripts on open web pages to enable interactive tools like
-      Floating AI Text Selection and Color Picker.</li>
-    <li><code>bookmarks</code> — Display bookmark folder trees and allow one-click page bookmarking.</li>
-    <li><code>cookies</code> — Display active domain cookies and permit users to clear tracking cookies for privacy
-      control.</li>
-    <li><code>clipboardWrite</code> — Copy captured screenshots, sampled colors, AI summary text, and extracted content
-      to your system clipboard.</li>
-    <li><code>contextMenus</code> — Add right-click shortcuts for downloading images, extracting text, and generating AI
-      summaries from selected text.</li>
-    <li><code>notifications</code> — Send desktop notifications when Pomodoro timer focus or break intervals end.</li>
-    <li><code>&lt;all_urls&gt;</code> — Enable page-level content scripts to run across websites requested by the user.
-    </li>
-  </ul>
+  <h2>6. Security and policy compliance</h2>
+  <p>Network requests made by ETX Toolbox for the features above use HTTPS where the relevant service supports it. ETX Toolbox uses user data only to provide or improve the user-facing features described in this policy and does not transfer it for advertising purposes.</p>
+  <p>The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
 
-  <h2>5. Data Retention &amp; User Control</h2>
-  <ul>
-    <li>All extension data stored in <code>chrome.storage.local</code> or <code>IndexedDB</code> remains on your device
-      until manually cleared or until the extension is uninstalled.</li>
-    <li>You can clear saved notes, screenshot history, color palettes, and session recordings at any time directly
-      within the extension options menu.</li>
-    <li>Uninstalling ETX Toolbox automatically removes all local storage associated with the extension.</li>
-  </ul>
-
-  <h2>6. Contact &amp; Compliance</h2>
-  <p>
-    If you have any questions, concerns, or requests regarding this Privacy Policy or data security in ETX Toolbox,
-    please contact developer support:
-  </p>
-  <p><strong>Developer Email:</strong> <code>binhcoder02@gmail.com</code></p>
-
+  <h2>7. Contact</h2>
+  <p>For questions about this policy or ETX Toolbox data handling, contact:</p>
+  <p><strong>Developer email:</strong> <code>binhcoder02@gmail.com</code></p>
   <footer>ETX Toolbox &mdash; Official Privacy Policy</footer>
 </body>
-
 </html>
