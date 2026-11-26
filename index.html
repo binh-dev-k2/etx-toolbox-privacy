@@ -17,8 +17,8 @@
 </head>
 <body>
   <h1>Privacy Policy — ETX Toolbox</h1>
-  <p class="muted"><strong>Last updated:</strong> August 20, 2026</p>
-  <p>ETX Toolbox is a modular browser extension with productivity, media, capture, privacy, developer, translation, and optional AI tools. This policy explains the data the extension handles, why it handles it, where it is stored, and when it is shared with third parties.</p>
+  <p class="muted"><strong>Last updated:</strong> November 26, 2026</p>
+  <p>ETX Toolbox is a modular browser extension with productivity, media, capture, privacy, developer, SEO, translation, and optional AI tools. This policy explains the data the extension handles, why it handles it, where it is stored, and when it is shared with third parties.</p>
 
   <h2>1. Our privacy commitment</h2>
   <ul>
@@ -29,7 +29,7 @@
   </ul>
 
   <h2>2. Data handled and stored locally</h2>
-  <p>The extension may store the following data locally in extension storage, page local storage, or IndexedDB, depending on the tool:</p>
+  <p>The extension may store the following data locally in extension storage (<code>browser.storage.local</code> / <code>browser.storage.session</code>) or IndexedDB, depending on the tool:</p>
   <ul>
     <li>Preferences such as language, enabled plugins, plugin order, favorites, recent tools, and side-panel state.</li>
     <li>Tool settings and results, including color history, notes, custom CSS rules, bookmarks, timer state, reading statistics, and image or screenshot editing preferences.</li>
@@ -43,8 +43,14 @@
   <p>Some tools send only the content needed to deliver a feature you request:</p>
   <ul>
     <li><strong>Google Translate and text-to-speech:</strong> Selected or pasted text, the source/target language, and text-to-speech language are sent to Google Translate when you translate or listen to text. The Translate plugin does not require you to provide a Google account or API key.</li>
-    <li><strong>Optional AI features:</strong> Text that you submit to AI Summarizer or AI Writer is sent to the AI provider you configure, such as OpenAI, Google Gemini, Anthropic, or OpenRouter. The request is authenticated with the API key you provide to that provider.</li>
-    <li><strong>TikTok media tools:</strong> When you request media inspection or download, the extension may contact the media source or a resolver needed to locate the requested public media asset.</li>
+    <li><strong>Optional AI features:</strong> Text submitted to AI Summarizer or AI Writer — and captured regions if you explicitly switch OCR Lens to AI Vision mode — is sent directly to the AI provider you configure (such as OpenAI, Google Gemini, Anthropic, OpenRouter, or a custom OpenAI-compatible endpoint) using your own API key.</li>
+    <li><strong>GitHub Repo Packer:</strong> When you choose to pack a GitHub repository, the extension requests public repository trees and file contents from <code>api.github.com</code> and <code>raw.githubusercontent.com</code> (using an optional personal access token only if you enter one).</li>
+    <li><strong>TikTok media tools:</strong> When you request media inspection or download, the extension may contact public resolver services (<code>tikwm.com</code>, <code>api.tiklydown.eu.org</code>) with the requested TikTok video URL to locate the public media asset.</li>
+    <li><strong>YouTube community tools:</strong> When enabled on YouTube, video IDs may be sent to <code>returnyoutubedislikeapi.com</code> (dislike counts) and <code>sponsor.ajay.app</code> (SponsorBlock segments) to display community data.</li>
+    <li><strong>Dictionary &amp; Currency Converter:</strong> When invoked, lookup words or currency requests are sent to <code>dictionaryapi.dev</code>, <code>en.wiktionary.org</code>, or <code>open.er-api.com</code>.</li>
+    <li><strong>Citation Generator (DOI / ISBN lookup):</strong> When you look up a publication by DOI or ISBN, the extension queries <code>api.crossref.org</code> or <code>openlibrary.org</code>.</li>
+    <li><strong>Password Health:</strong> Breach checks use <code>api.pwnedpasswords.com</code> with k-anonymity (only the first 5 characters of a SHA-1 hash are sent; your plaintext password never leaves your device).</li>
+    <li><strong>Offline OCR model download:</strong> The compact Tesseract language model used by offline OCR Lens (about 0.5 MB) is fetched once on first use from the official <code>tesseract-ocr/tessdata_fast</code> repository on <code>raw.githubusercontent.com</code>, verified by SHA-256 hash, and cached locally in IndexedDB. This request contains no page content, screenshots, or recognized text, and you can remove the cached model anytime in OCR Lens settings.</li>
   </ul>
   <p>The extension does not send page content, URLs, cookies, screenshots, recordings, or clipboard content to third parties unless it is necessary for a feature you explicitly invoke. Image conversion and resizing are performed locally in the browser.</p>
 
@@ -62,7 +68,9 @@
     <li><code>clipboardWrite</code> — Copy user-requested output such as sampled colors, translations, generated text, screenshots, or extracted content.</li>
     <li><code>contextMenus</code> — Add supported right-click shortcuts, including translating selected text and media/page actions.</li>
     <li><code>notifications</code> — Notify you when Pomodoro focus sessions and breaks finish.</li>
-    <li><code>declarativeNetRequest</code> — Apply a narrowly scoped request-header rule to the Translate plugin's own Google Translate text and text-to-speech requests. It does not block, redirect, inspect, or modify normal browsing traffic.</li>
+    <li><code>declarativeNetRequest</code> — Apply scoped request-header rules for Translate's Google Translate/TTS requests, apply a custom <code>User-Agent</code> header when you enable the User-Agent Switcher, and optionally block ad or tracker requests when Ad Shield or Privacy Shield is enabled.</li>
+    <li><code>webNavigation</code> — Re-apply active page tools (such as CSS Injector or Video Speed) cleanly on navigation events and collect local page-load metrics when inspected.</li>
+    <li><code>offscreen</code> — Run local offline Tesseract WASM OCR, ZIP blob packaging, and timer chime audio outside the service worker.</li>
   </ul>
 
   <h2>5. Data retention and your choices</h2>
